@@ -1,0 +1,385 @@
+:root {
+  --void: #0A0B0F;
+  --void-2: #14151C;
+  --orange: #FF5A36;
+  --violet: #7C5CFF;
+  --amber: #F2B705;
+  --steel: #C7CBD1;
+  --steel-dim: #8A8F98;
+  --line: rgba(199,203,209,0.14);
+  --display: 'Anton', sans-serif;
+  --body: 'IBM Plex Sans', sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--steel);
+  font-family: var(--body);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+a { color: var(--violet); }
+
+main { min-height: 60vh; }
+
+/* ---------- Nav ---------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 6vw;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(10,11,15,0.92);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.nav__mark {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  font-size: 0.92rem;
+}
+
+.nav__links a {
+  color: var(--steel);
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.nav__links a:hover { color: var(--orange); }
+.nav__links a.is-active {
+  color: #fff;
+  border-bottom: 2px solid var(--orange);
+}
+
+.nav__cta {
+  border: 1px solid var(--orange);
+  color: var(--orange) !important;
+  padding: 0.4rem 0.9rem;
+  border-radius: 2px;
+}
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ---------- Page header (non-home pages) ---------- */
+.page-header {
+  padding: 4rem 6vw 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-header h1 { font-size: clamp(2.2rem, 5vw, 3rem); margin-bottom: 0.8rem; }
+.page-header p { color: var(--steel-dim); max-width: 60ch; }
+
+/* ---------- Hero (home only) ---------- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 6vw 6rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(124,92,255,0.10), transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(255,90,54,0.08), transparent 45%);
+  pointer-events: none;
+}
+
+.hero__text { max-width: 540px; position: relative; }
+
+.hero__kicker { font-size: 0.85rem; color: var(--steel-dim); margin-bottom: 1rem; }
+
+.hero h1 {
+  font-size: clamp(3.2rem, 8vw, 5.6rem);
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.hero__lede {
+  max-width: 46ch;
+  font-size: 1.08rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.85rem 1.7rem;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--primary { background: var(--orange); color: #16110D; }
+.btn--primary:hover { background: #e64d29; }
+
+/* ---------- Sigil + countdown ---------- */
+.hero__sigil { flex-shrink: 0; text-align: center; position: relative; }
+.sigil { width: 220px; height: 220px; }
+
+.sigil__ring { fill: none; stroke: var(--violet); stroke-width: 1.5; opacity: 0.5; }
+.sigil__ring--inner { stroke: var(--orange); opacity: 0.35; }
+
+.sigil__crack {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: draw 1.8s ease forwards 0.3s;
+}
+
+.sigil__crack--b { animation-delay: 0.8s; }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+.countdown { display: flex; gap: 1.2rem; justify-content: center; margin-top: 1rem; }
+.countdown__unit { display: flex; flex-direction: column; align-items: center; }
+.countdown__unit span { font-family: var(--display); font-size: 1.9rem; color: var(--amber); }
+.countdown__unit label { font-size: 0.72rem; color: var(--steel-dim); margin-top: 0.15rem; }
+.countdown__note { font-size: 0.8rem; color: var(--steel-dim); margin-top: 0.8rem; max-width: 220px; }
+
+/* ---------- About ---------- */
+.about {
+  border-top: 1px solid var(--line);
+  padding: 3rem 6vw;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.about__text { font-size: 1.1rem; max-width: 68ch; }
+
+/* ---------- Teasers (home page previews) ---------- */
+.teaser {
+  border-top: 1px solid var(--line);
+  padding: 3.5rem 6vw;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.teaser__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.8rem;
+}
+.teaser__header h2 { font-size: 1.7rem; }
+.teaser__link { font-size: 0.9rem; text-decoration: none; }
+.teaser__link:hover { color: var(--orange); }
+
+/* ---------- Sports / events mosaic ---------- */
+.sports__mosaic, .sports__mosaic--compact {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+.sports__mosaic--compact { grid-template-columns: repeat(3, 1fr); }
+
+.sport-tile { background: var(--void); padding: 1.6rem; grid-column: span 1; }
+.sport-tile--lg { grid-column: span 2; }
+.sports__mosaic--compact .sport-tile--lg { grid-column: span 1; }
+.sport-tile h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.sport-tile p { margin: 0; font-size: 0.92rem; color: var(--steel-dim); }
+
+/* ---------- Events page (accordion cards) ---------- */
+.events-list {
+  padding: 3rem 6vw;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.event-card {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0 1.4rem;
+  background: var(--void-2);
+}
+
+.event-card summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+.event-card summary::-webkit-details-marker { display: none; }
+.event-card summary h3 { font-size: 1.1rem; }
+.event-card summary span { font-size: 0.85rem; color: var(--steel-dim); }
+
+.event-card p {
+  padding-bottom: 1.1rem;
+  margin: 0;
+  color: var(--steel);
+  font-size: 0.95rem;
+}
+
+.events-note {
+  padding: 0 6vw 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 0.85rem;
+  color: var(--steel-dim);
+}
+
+/* ---------- Leaderboard ---------- */
+.leaderboard-page { padding: 3rem 6vw; max-width: 900px; margin: 0 auto; }
+
+.leaderboard__table { width: 100%; border-collapse: collapse; }
+.leaderboard__table th {
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--steel-dim);
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0.5rem;
+  font-weight: 500;
+}
+.leaderboard__table td { padding: 0.9rem 0.5rem; border-bottom: 1px solid var(--line); }
+.leaderboard__table tr:first-child td { color: var(--amber); font-weight: 600; }
+
+/* ---------- Gallery ---------- */
+.gallery-page { padding: 3rem 6vw; max-width: 1100px; margin: 0 auto; }
+
+.gallery__mosaic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+
+.gallery__tile {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: repeating-linear-gradient(45deg, var(--void-2), var(--void-2) 10px, #191A22 10px, #191A22 20px);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: flex-end;
+  padding: 0.8rem;
+}
+.gallery__tile--lg { grid-column: span 2; aspect-ratio: 8/3; }
+.gallery__tile span { font-size: 0.8rem; color: var(--steel-dim); }
+
+/* ---------- Sponsors ---------- */
+.sponsors-page { padding: 3rem 6vw; max-width: 1100px; margin: 0 auto; }
+
+.sponsors__strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.sponsors__strip span { font-family: var(--display); font-size: 1.1rem; color: var(--steel-dim); }
+.sponsors__note { margin-top: 1.5rem; font-size: 0.9rem; color: var(--steel-dim); }
+
+/* ---------- Team ---------- */
+.team-page { padding: 3rem 6vw; max-width: 900px; margin: 0 auto; }
+
+.team__row { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.team__name { color: #fff; font-weight: 600; }
+.team__role { color: var(--steel-dim); }
+.team__note { margin-top: 1.2rem; font-size: 0.85rem; color: var(--steel-dim); }
+
+/* ---------- Register ---------- */
+.register-page { padding: 3rem 6vw; max-width: 700px; margin: 0 auto; }
+
+.register__form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.field label { font-size: 0.88rem; color: var(--steel); }
+
+.field input, .field select {
+  font-family: var(--body);
+  font-size: 1rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--void-2);
+  color: #fff;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--amber); }
+
+.register__form button { grid-column: 1 / -1; justify-self: start; margin-top: 0.5rem; }
+.register__status { grid-column: 1 / -1; font-size: 0.9rem; min-height: 1.2em; }
+.register__status.success { color: var(--violet); }
+.register__status.error { color: var(--orange); }
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2.5rem 6vw 3rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--steel-dim);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .hero { flex-direction: column; align-items: flex-start; padding-top: 3rem; }
+  .hero__sigil { align-self: center; }
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    background: var(--void);
+    padding: 1.5rem 6vw;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav__links.is-open { display: flex; }
+  .nav__toggle { display: block; }
+  .sports__mosaic, .sports__mosaic--compact { grid-template-columns: repeat(2, 1fr); }
+  .sport-tile--lg { grid-column: span 2; }
+  .gallery__mosaic { grid-template-columns: repeat(2, 1fr); }
+  .gallery__tile--lg { grid-column: span 2; }
+  .register__form { grid-template-columns: 1fr; }
+  .teaser__header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sigil__crack { animation: none; stroke-dashoffset: 0; }
+}

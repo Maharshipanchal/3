@@ -1,0 +1,13 @@
+<header class="nav">
+  <a href="/" class="nav__mark">ASHVAMEDHA</a>
+  <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">☰</button>
+  <nav class="nav__links" id="nav-links">
+    <a href="/" class="<%= activePage === 'home' ? 'is-active' : '' %>">Home</a>
+    <a href="/events" class="<%= activePage === 'events' ? 'is-active' : '' %>">Events</a>
+    <a href="/leaderboard" class="<%= activePage === 'leaderboard' ? 'is-active' : '' %>">Leaderboard</a>
+    <a href="/gallery" class="<%= activePage === 'gallery' ? 'is-active' : '' %>">Gallery</a>
+    <a href="/sponsors" class="<%= activePage === 'sponsors' ? 'is-active' : '' %>">Sponsors</a>
+    <a href="/team" class="<%= activePage === 'team' ? 'is-active' : '' %>">Team</a>
+    <a href="/register" class="nav__cta">Register your team</a>
+  </nav>
+</header>

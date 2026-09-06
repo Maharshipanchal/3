@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><%- include('partials/head', { title: 'Events' }) %></head>
+<body>
+<%- include('partials/nav', { activePage: 'events' }) %>
+
+<main>
+  <section class="page-header">
+    <h1>All events</h1>
+    <p>Nine sports, one campus, three days. Click any event to see rules and format.</p>
+  </section>
+
+  <section class="events-list">
+    <details class="event-card" open>
+      <summary><h3>Basketball</h3><span>5-on-5</span></summary>
+      <p>Full-court, FIBA rules. Group stage into single-elimination knockouts. Matches are 4 quarters of 8 minutes each.</p>
+    </details>
+    <details class="event-card">
+      <summary><h3>Football</h3><span>7-a-side</span></summary>
+      <p>Group stage into knockouts. Matches are 2 halves of 20 minutes. Standard FIFA 7-a-side rules apply.</p>
+    </details>
+    <details class="event-card">
+      <summary><h3>Volleyball</h3><span>6-on-6</span></summary>
+      <p>Best of 3 sets, standard indoor rules. Rally point scoring to 25, deciding set to 15.</p>
+    </details>
+    <details class="event-card">
+      <summary><h3>Badminton</h3><span>Singles &amp; Doubles</span></summary>
+      <p>BWF scoring, best of 3 games to 21 points. Singles and doubles brackets run separately.</p>
+    </details>
+    <details class="event-card">
+      <summary><h3>Table Tennis</h3><span>Singles</span></summary>
+      <p>Knockout format, best of 5 games to 11 points.</p>
+    </details>
+    <details class="event-card">
+      <summary><h3>Lawn Tennis</h3><span>Singles &amp; Doubles</span></summary>
+      <p>Standard scoring, best of 3 sets with a tiebreak at 6-6.</p>
+    </details>
+    <details class="event-card">
+      <summary><h3>Chess</h3><span>Individual</span></summary>
+      <p>Swiss format, rapid time control (15 minutes + 10 second increment per player).</p>
+    </details>
+    <details class="event-card">
+      <summary><h3>Weightlifting</h3><span>Weight categories</span></summary>
+      <p>Standard weight categories, 3 attempts per lift, best valid attempt counts.</p>
+    </details>
+    <details class="event-card">
+      <summary><h3>Kho-Kho</h3><span>9-a-side</span></summary>
+      <p>Standard rules, two innings each of chasing and running, 9 minutes per turn.</p>
+    </details>
+  </section>
+
+  <p class="events-note">Full written rulebooks for each sport will be shared with registered team captains before the fest.</p>
+</main>
+
+<%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><%- include('partials/head', { title: 'Home' }) %></head>
+<body>
+<%- include('partials/nav', { activePage: 'home' }) %>
+
+<main>
+  <section class="hero">
+    <div class="hero__text">
+      <p class="hero__kicker">IIT Bhubaneswar · Sports Council, Students' Gymkhana</p>
+      <h1>THE LAST<br>STAND</h1>
+      <p class="hero__lede">
+        Ashvamedha returns. Houses split into factions, every court becomes a
+        front line, and only one name makes it to the top of the standings
+        when the clock runs out.
+      </p>
+      <a href="/register" class="btn btn--primary">Register your team</a>
+    </div>
+
+    <div class="hero__sigil">
+      <svg viewBox="0 0 360 360" class="sigil">
+        <circle cx="180" cy="180" r="150" class="sigil__ring" />
+        <circle cx="180" cy="180" r="115" class="sigil__ring sigil__ring--inner" />
+        <path class="sigil__crack" d="M180 30 L165 140 L210 155 L150 260 L175 190 L120 175 Z" />
+        <path class="sigil__crack sigil__crack--b" d="M60 180 L140 165 L150 200 L260 190" />
+      </svg>
+      <div class="countdown" id="countdown">
+        <div class="countdown__unit"><span id="cd-days">--</span><label>days</label></div>
+        <div class="countdown__unit"><span id="cd-hours">--</span><label>hrs</label></div>
+        <div class="countdown__unit"><span id="cd-mins">--</span><label>min</label></div>
+        <div class="countdown__unit"><span id="cd-secs">--</span><label>sec</label></div>
+      </div>
+      <p class="countdown__note">until it begins — date to be confirmed</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <p class="about__text">
+      For over five editions, Ashvamedha has brought hundreds of athletes from
+      colleges across the Eastern Zone onto one campus. Same sports, same
+      sportsmanship — this year, a different story wrapped around it.
+    </p>
+  </section>
+
+  <section class="teaser">
+    <div class="teaser__header">
+      <h2>Featured events</h2>
+      <a href="/events" class="teaser__link">View all events</a>
+    </div>
+    <div class="sports__mosaic sports__mosaic--compact">
+      <div class="sport-tile sport-tile--lg">
+        <h3>Basketball</h3>
+        <p>5-on-5, knockout bracket. Full-court, FIBA rules.</p>
+      </div>
+      <div class="sport-tile">
+        <h3>Football</h3>
+        <p>7-a-side, group stage into knockouts.</p>
+      </div>
+      <div class="sport-tile">
+        <h3>Badminton</h3>
+        <p>Singles &amp; doubles brackets, BWF scoring.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="teaser">
+    <div class="teaser__header">
+      <h2>Current standings</h2>
+      <a href="/leaderboard" class="teaser__link">Full leaderboard</a>
+    </div>
+    <table class="leaderboard__table" id="home-leaderboard">
+      <thead><tr><th>Rank</th><th>Institution</th><th>Points</th></tr></thead>
+      <tbody id="home-leaderboard-body">
+        <tr><td colspan="3">Loading standings…</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+</body>
+</html>
