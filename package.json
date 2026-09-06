@@ -1,0 +1,13 @@
+{
+  "name": "ashvamedha",
+  "version": "2.0.0",
+  "description": "Ashvamedha 2026 — multi-page site, IIT Bhubaneswar",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ejs": "^3.1.10"
+  }
+}
